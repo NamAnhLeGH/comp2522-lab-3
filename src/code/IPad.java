@@ -15,7 +15,7 @@ public class IPad extends IDevice {
      * @param hasCase  whether the iPad has a case
      * @param OSVersion the OS version of the iPad
      */
-    public IPad(boolean hasCase, String OSVersion) {
+    public IPad(final boolean hasCase, final String OSVersion) {
         super("learning");
 
         validateOSVersion(OSVersion);
@@ -28,7 +28,7 @@ public class IPad extends IDevice {
      *
      * @param OSVersion the OS version of the iPad
      */
-    private void validateOSVersion(String OSVersion) {
+    private void validateOSVersion(final String OSVersion) {
         if (OSVersion == null || OSVersion.isBlank()) {
             throw new IllegalArgumentException("OSVersion must not be null or blank");
         }
@@ -57,7 +57,7 @@ public class IPad extends IDevice {
      *
      * @param hasCase the case status to set
      */
-    public void setHasCase(boolean hasCase) {
+    public void setHasCase(final boolean hasCase) {
         this.hasCase = hasCase;
     }
 
@@ -66,7 +66,7 @@ public class IPad extends IDevice {
      *
      * @param OSVersion the OS version to set
      */
-    public void setOSVersion(String OSVersion) {
+    public void setOSVersion(final String OSVersion) {
         this.OSVersion = OSVersion;
     }
 
@@ -100,7 +100,7 @@ public class IPad extends IDevice {
      * @return true if the given object represents an IPad equivalent to this iPad, false otherwise
      */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (!(o instanceof IPad iPad)) return false;
         if (!super.equals(o)) return false;

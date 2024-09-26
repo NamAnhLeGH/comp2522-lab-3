@@ -17,7 +17,7 @@ public class IPhone16 extends IPhone {
      * @param hasHighResolutionCamera whether the iPhone16 has a high resolution camera
      * @param memoryInGB          the memory size of the iPhone16 in gigabytes
      */
-    public IPhone16(double minutesRemaining, String carrier, boolean hasHighResolutionCamera, int memoryInGB) {
+    public IPhone16(final double minutesRemaining, final String carrier, final boolean hasHighResolutionCamera, final int memoryInGB) {
         super(minutesRemaining, carrier);
 
         validateMemoryInGB(memoryInGB);
@@ -30,7 +30,7 @@ public class IPhone16 extends IPhone {
      *
      * @param memoryInGB the memory size of the iPhone16 in gigabytes
      */
-    private void validateMemoryInGB(int memoryInGB) {
+    private void validateMemoryInGB(final int memoryInGB) {
         if(memoryInGB < 0) {
             throw new IllegalArgumentException("Memory size of iPhone16 must be non-negative");
         }
@@ -76,7 +76,7 @@ public class IPhone16 extends IPhone {
      * @return true if the given object represents an IPhone16 equivalent to this iPhone16, false otherwise
      */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (!(o instanceof IPhone16 iPhone16)) return false;
         if (!super.equals(o)) return false;

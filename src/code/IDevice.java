@@ -13,7 +13,7 @@ public abstract class IDevice {
      *
      * @param purpose the purpose of the device
      */
-    public IDevice(String purpose) {
+    public IDevice(final String purpose) {
         validatePurpose(purpose);
 
         this.purpose = purpose;
@@ -24,7 +24,7 @@ public abstract class IDevice {
      *
      * @param purpose the purpose of the device
      */
-    private void validatePurpose(String purpose) {
+    private void validatePurpose(final String purpose) {
         if(purpose == null || purpose.isBlank()) {
             throw new IllegalArgumentException("Purpose must not be null or blank");
         }
@@ -64,9 +64,15 @@ public abstract class IDevice {
      * @return true if the given object represents an IDevice equivalent to this device, false otherwise
      */
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof IDevice iDevice)) return false;
+    public boolean equals(final Object o) {
+        if (this == o) {
+            return true;
+        }
+
+        if (!(o instanceof IDevice iDevice)) {
+            return false;
+        }
+
         return Objects.equals(purpose, iDevice.purpose);
     }
 

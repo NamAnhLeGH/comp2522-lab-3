@@ -15,7 +15,7 @@ public class IPod extends IDevice {
      * @param storedSongCount the number of songs stored in the iPod
      * @param maxVolumeDB     the maximum volume of the iPod in decibels
      */
-    public IPod(int storedSongCount, double maxVolumeDB) {
+    public IPod(final int storedSongCount, final double maxVolumeDB) {
         super("music");
 
         validateStoredSongCount(storedSongCount);
@@ -30,7 +30,7 @@ public class IPod extends IDevice {
      * @param storedSongCount the number of songs stored in the iPod
      * @throws IllegalArgumentException if the stored song count is negative
      */
-    private void validateStoredSongCount(int storedSongCount) {
+    private void validateStoredSongCount(final int storedSongCount) {
         if (storedSongCount < 0) {
             throw new IllegalArgumentException("Stored song count of iPod must be non-negative");
         }
@@ -42,7 +42,7 @@ public class IPod extends IDevice {
      * @param maxVolumeDB the maximum volume of the iPod in decibels
      * @throws IllegalArgumentException if the maximum volume is negative
      */
-    private void validateMaxVolumeDB(double maxVolumeDB) {
+    private void validateMaxVolumeDB(final double maxVolumeDB) {
         if (maxVolumeDB < 0) {
             throw new IllegalArgumentException("Max volume of iPod must be non-negative");
         }
@@ -71,7 +71,7 @@ public class IPod extends IDevice {
      *
      * @param storedSongCount the number of songs to set
      */
-    public void setStoredSongCount(int storedSongCount) {
+    public void setStoredSongCount(final int storedSongCount) {
         validateStoredSongCount(storedSongCount);
         this.storedSongCount = storedSongCount;
     }
@@ -106,7 +106,7 @@ public class IPod extends IDevice {
      * @return true if the given object represents an IPod equivalent to this iPod, false otherwise
      */
     @Override
-    public boolean equals(Object o) {
+    public boolean equals(final Object o) {
         if (this == o) return true;
         if (!(o instanceof IPod iPod)) return false;
         if (!super.equals(o)) return false;
